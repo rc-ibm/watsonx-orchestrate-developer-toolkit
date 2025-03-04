@@ -18,6 +18,7 @@ logger.setLevel(logging.DEBUG)
 WATSONX_DEPLOYMENT_ID = os.getenv("WATSONX_DEPLOYMENT_ID")
 WATSONX_API_KEY = os.getenv("WATSONX_API_KEY")
 WATSONX_URL = os.getenv("WATSONX_URL", "https://us-south.ml.cloud.ibm.com")
+WATSONX_SPACE_ID = os.getenv("WATSONX_SPACE_ID")
 
 
 def _get_access_token():
@@ -53,7 +54,7 @@ def _get_access_token():
 
 def _get_wxai_client():
     credentials = {"url": WATSONX_URL, "token": _get_access_token()}
-    return APIClient(credentials)
+    return APIClient(credentials, space_id=WATSONX_SPACE_ID)
 
 
 def get_llm_sync(messages: List[Message]) -> list[Message]:
