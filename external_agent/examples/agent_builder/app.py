@@ -4,6 +4,7 @@ import time
 from typing import Optional, Dict, Any
 from fastapi import FastAPI, Header, Depends
 from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.exceptions import RequestValidationError
 
 from models import (
     ChatCompletionRequest,
