@@ -44,7 +44,7 @@ async def chat_completions(
         description="Optional header to specify the thread ID",
     ),
     current_user: Dict[str, Any] = Depends(get_current_user),
-):
+) -> ChatCompletionResponse:
     logger.info(
         f"Received POST /chat/completions ChatCompletionRequest: {request.json()}"
     )
