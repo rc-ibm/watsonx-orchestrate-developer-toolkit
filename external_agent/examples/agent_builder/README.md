@@ -84,6 +84,7 @@ It is recommended to implement your own authentication security measures to ensu
    - Add the following environment variables:
      - `WATSONX_DEPLOYMENT_ID`
      - `WATSONX_API_KEY`
+     - `WATSONX_SPACE_ID`
      - `WATSONX_URL` (optional)
 
 5. **Test the Application:**
